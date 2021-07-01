@@ -53,15 +53,15 @@ namespace Calculator_Final
             this.btn_pi = new System.Windows.Forms.Button();
             this.btn_mr = new System.Windows.Forms.Button();
             this.btn_sqrt = new System.Windows.Forms.Button();
-            this.btn_factorial = new System.Windows.Forms.Button();
+            this.btn_sign = new System.Windows.Forms.Button();
             this.label_memory = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_history = new System.Windows.Forms.Label();
             this.Label_memorysave = new System.Windows.Forms.Label();
+            this.txtbox_history = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_7
             // 
-            this.btn_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_7.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_7.Location = new System.Drawing.Point(12, 167);
             this.btn_7.Name = "btn_7";
@@ -74,7 +74,6 @@ namespace Calculator_Final
             // 
             // btn_8
             // 
-            this.btn_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_8.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_8.Location = new System.Drawing.Point(78, 167);
             this.btn_8.Name = "btn_8";
@@ -87,7 +86,6 @@ namespace Calculator_Final
             // 
             // btn_9
             // 
-            this.btn_9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_9.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_9.Location = new System.Drawing.Point(144, 167);
             this.btn_9.Name = "btn_9";
@@ -100,7 +98,6 @@ namespace Calculator_Final
             // 
             // btn_4
             // 
-            this.btn_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_4.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_4.Location = new System.Drawing.Point(12, 223);
             this.btn_4.Name = "btn_4";
@@ -113,7 +110,6 @@ namespace Calculator_Final
             // 
             // btn_5
             // 
-            this.btn_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_5.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_5.Location = new System.Drawing.Point(78, 223);
             this.btn_5.Name = "btn_5";
@@ -126,7 +122,6 @@ namespace Calculator_Final
             // 
             // btn_6
             // 
-            this.btn_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_6.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_6.Location = new System.Drawing.Point(144, 223);
             this.btn_6.Name = "btn_6";
@@ -139,7 +134,6 @@ namespace Calculator_Final
             // 
             // btn_1
             // 
-            this.btn_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_1.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_1.Location = new System.Drawing.Point(12, 279);
             this.btn_1.Name = "btn_1";
@@ -152,7 +146,6 @@ namespace Calculator_Final
             // 
             // btn_2
             // 
-            this.btn_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_2.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_2.Location = new System.Drawing.Point(78, 279);
             this.btn_2.Name = "btn_2";
@@ -165,7 +158,6 @@ namespace Calculator_Final
             // 
             // btn_3
             // 
-            this.btn_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_3.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_3.Location = new System.Drawing.Point(144, 279);
             this.btn_3.Name = "btn_3";
@@ -178,7 +170,6 @@ namespace Calculator_Final
             // 
             // btn_0
             // 
-            this.btn_0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_0.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_0.Location = new System.Drawing.Point(12, 335);
             this.btn_0.Name = "btn_0";
@@ -191,7 +182,6 @@ namespace Calculator_Final
             // 
             // btn_decimal
             // 
-            this.btn_decimal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_decimal.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_decimal.Location = new System.Drawing.Point(144, 335);
             this.btn_decimal.Name = "btn_decimal";
@@ -200,11 +190,10 @@ namespace Calculator_Final
             this.btn_decimal.TabStop = false;
             this.btn_decimal.Text = ".";
             this.btn_decimal.UseVisualStyleBackColor = true;
-            this.btn_decimal.Click += new System.EventHandler(this.input_click);
+            this.btn_decimal.Click += new System.EventHandler(this.decimal_click);
             // 
             // btn_addition
             // 
-            this.btn_addition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_addition.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_addition.Location = new System.Drawing.Point(210, 335);
             this.btn_addition.Name = "btn_addition";
@@ -213,10 +202,10 @@ namespace Calculator_Final
             this.btn_addition.TabStop = false;
             this.btn_addition.Text = "+";
             this.btn_addition.UseVisualStyleBackColor = true;
+            this.btn_addition.Click += new System.EventHandler(this.click_addition);
             // 
             // btn_subtraction
             // 
-            this.btn_subtraction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_subtraction.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_subtraction.Location = new System.Drawing.Point(210, 279);
             this.btn_subtraction.Name = "btn_subtraction";
@@ -225,10 +214,10 @@ namespace Calculator_Final
             this.btn_subtraction.TabStop = false;
             this.btn_subtraction.Text = "-";
             this.btn_subtraction.UseVisualStyleBackColor = true;
+            this.btn_subtraction.Click += new System.EventHandler(this.click_subtraction);
             // 
             // btn_multiplication
             // 
-            this.btn_multiplication.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_multiplication.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_multiplication.Location = new System.Drawing.Point(210, 223);
             this.btn_multiplication.Name = "btn_multiplication";
@@ -240,7 +229,6 @@ namespace Calculator_Final
             // 
             // btn_division
             // 
-            this.btn_division.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_division.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_division.Location = new System.Drawing.Point(210, 167);
             this.btn_division.Name = "btn_division";
@@ -252,7 +240,6 @@ namespace Calculator_Final
             // 
             // btn_ce
             // 
-            this.btn_ce.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ce.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ce.Location = new System.Drawing.Point(276, 223);
             this.btn_ce.Name = "btn_ce";
@@ -261,10 +248,10 @@ namespace Calculator_Final
             this.btn_ce.TabStop = false;
             this.btn_ce.Text = "CE";
             this.btn_ce.UseVisualStyleBackColor = true;
+            this.btn_ce.Click += new System.EventHandler(this.click_ce);
             // 
             // btn_del
             // 
-            this.btn_del.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_del.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_del.Location = new System.Drawing.Point(276, 167);
             this.btn_del.Name = "btn_del";
@@ -273,10 +260,10 @@ namespace Calculator_Final
             this.btn_del.TabStop = false;
             this.btn_del.Text = "DEL";
             this.btn_del.UseVisualStyleBackColor = true;
+            this.btn_del.Click += new System.EventHandler(this.click_delete);
             // 
             // btn_equals
             // 
-            this.btn_equals.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_equals.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_equals.Location = new System.Drawing.Point(276, 279);
             this.btn_equals.Name = "btn_equals";
@@ -285,6 +272,7 @@ namespace Calculator_Final
             this.btn_equals.TabStop = false;
             this.btn_equals.Text = "=";
             this.btn_equals.UseVisualStyleBackColor = true;
+            this.btn_equals.Click += new System.EventHandler(this.click_equals);
             // 
             // txtbox_io
             // 
@@ -299,7 +287,6 @@ namespace Calculator_Final
             // 
             // btn_ms
             // 
-            this.btn_ms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ms.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ms.Location = new System.Drawing.Point(12, 111);
             this.btn_ms.Name = "btn_ms";
@@ -311,7 +298,6 @@ namespace Calculator_Final
             // 
             // btn_pi
             // 
-            this.btn_pi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_pi.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_pi.Location = new System.Drawing.Point(144, 111);
             this.btn_pi.Name = "btn_pi";
@@ -323,7 +309,6 @@ namespace Calculator_Final
             // 
             // btn_mr
             // 
-            this.btn_mr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_mr.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_mr.Location = new System.Drawing.Point(78, 111);
             this.btn_mr.Name = "btn_mr";
@@ -335,7 +320,6 @@ namespace Calculator_Final
             // 
             // btn_sqrt
             // 
-            this.btn_sqrt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_sqrt.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_sqrt.Location = new System.Drawing.Point(210, 111);
             this.btn_sqrt.Name = "btn_sqrt";
@@ -345,17 +329,17 @@ namespace Calculator_Final
             this.btn_sqrt.Text = "√";
             this.btn_sqrt.UseVisualStyleBackColor = true;
             // 
-            // btn_factorial
+            // btn_sign
             // 
-            this.btn_factorial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_factorial.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_factorial.Location = new System.Drawing.Point(276, 111);
-            this.btn_factorial.Name = "btn_factorial";
-            this.btn_factorial.Size = new System.Drawing.Size(60, 50);
-            this.btn_factorial.TabIndex = 23;
-            this.btn_factorial.TabStop = false;
-            this.btn_factorial.Text = "!";
-            this.btn_factorial.UseVisualStyleBackColor = true;
+            this.btn_sign.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sign.Location = new System.Drawing.Point(276, 111);
+            this.btn_sign.Name = "btn_sign";
+            this.btn_sign.Size = new System.Drawing.Size(60, 50);
+            this.btn_sign.TabIndex = 23;
+            this.btn_sign.TabStop = false;
+            this.btn_sign.Text = "+/-";
+            this.btn_sign.UseVisualStyleBackColor = true;
+            this.btn_sign.Click += new System.EventHandler(this.click_sign);
             // 
             // label_memory
             // 
@@ -367,14 +351,14 @@ namespace Calculator_Final
             this.label_memory.TabIndex = 24;
             this.label_memory.Text = "Memory:";
             // 
-            // label1
+            // label_history
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 30);
-            this.label1.TabIndex = 25;
+            this.label_history.AutoSize = true;
+            this.label_history.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_history.Location = new System.Drawing.Point(12, 52);
+            this.label_history.Name = "label_history";
+            this.label_history.Size = new System.Drawing.Size(0, 17);
+            this.label_history.TabIndex = 25;
             // 
             // Label_memorysave
             // 
@@ -385,15 +369,26 @@ namespace Calculator_Final
             this.Label_memorysave.Size = new System.Drawing.Size(0, 24);
             this.Label_memorysave.TabIndex = 26;
             // 
+            // txtbox_history
+            // 
+            this.txtbox_history.Location = new System.Drawing.Point(342, 12);
+            this.txtbox_history.Multiline = true;
+            this.txtbox_history.Name = "txtbox_history";
+            this.txtbox_history.ReadOnly = true;
+            this.txtbox_history.Size = new System.Drawing.Size(282, 374);
+            this.txtbox_history.TabIndex = 27;
+            this.txtbox_history.TabStop = false;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 392);
+            this.ClientSize = new System.Drawing.Size(636, 398);
+            this.Controls.Add(this.txtbox_history);
             this.Controls.Add(this.Label_memorysave);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_history);
             this.Controls.Add(this.label_memory);
-            this.Controls.Add(this.btn_factorial);
+            this.Controls.Add(this.btn_sign);
             this.Controls.Add(this.btn_sqrt);
             this.Controls.Add(this.btn_mr);
             this.Controls.Add(this.btn_pi);
@@ -450,10 +445,11 @@ namespace Calculator_Final
         private System.Windows.Forms.Button btn_pi;
         private System.Windows.Forms.Button btn_mr;
         private System.Windows.Forms.Button btn_sqrt;
-        private System.Windows.Forms.Button btn_factorial;
+        private System.Windows.Forms.Button btn_sign;
         private System.Windows.Forms.Label label_memory;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_history;
         private System.Windows.Forms.Label Label_memorysave;
+        private System.Windows.Forms.TextBox txtbox_history;
     }
 }
 
